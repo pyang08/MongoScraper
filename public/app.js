@@ -4,8 +4,9 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br /> <a href = '" + data[i].link + "'> Read Full Article Here</a>" + $noteBook + "</p>");
+    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br /> <a href = '" + data[i].link + "'> Read Full Article Here</a> </p>");
     // A button to submit a new note, with the id of the article saved to it
+    $("#articles").append("<p data-id='" + data[i]._id + "'>" + $noteBook + "</p>");
     // $("#articles").append("<p data-id='" + data[i]._id + "'>" + $noteBook + "</p>");
     // A button to submit a new note, with the id of the article saved to it
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + $youHaveBeenSaved + "</p>");
@@ -135,13 +136,15 @@ var $youHaveBeenSaved = `<!-- Button trigger modal -->
 
 // $(document).ready(function () {
 //   function writingNotes() {
+  // $(".writeANote").on("click", sendIdToModal)
 
 $(document).on("click", ".writeANote", function writingNotes() {
 
  // Empty the notes from the note section
  $("#notes").empty();
  // Save the id from the p tag
- var thisId = $(this).attr("data-id");
+ var thisId = $(this).closest("[data-id]").attr("data-id");
+
 
  // Now make an ajax call for the Article
  $.ajax({
