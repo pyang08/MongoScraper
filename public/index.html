@@ -10,70 +10,49 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
     crossorigin="anonymous">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href="assets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-  <style>
-    body {
-      background-color: #F2F6D0
-    }
-
-    #wrapper {
-      width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-top: 5%;
-    }
-
-    #articles {
-      display: inline-block;
-      overflow: auto;
-      width: 60%;
-      height: 700px;
-    }
-
-    #notes {
-      float: right;
-      width: 30%;
-    }
-
-    textarea,
-    input {
-      display: block;
-      width: 100%;
-      background-color: #FCF5C7;
-    }
-
-    input {
-      height: 36px;
-      font-size: 24px;
-    }
-
-    textarea {
-      height: 200px;
-      font-size: 18px;
-    }
-  </style>
 </head>
 
 <body>
-    <div id="wrapper">
-    <h1>Mongo Scraper</h1>
-    <h2>
-      <i>Scrape any ESPN headline!</i>
-    </h2>
-    <button class="btn" id="scrapeBtn" onclick="scrapeIt()">SCRAPE IT!</button>
-    <br>
-  <div class="container">
-    <div class="row">
-      <div class="col">
 
-          <div class="flamingo" id="articles"></div>
-          <!-- <div class="flamingo" id="notes"></div> -->
-          <div class="flamingo" id="saved"></div>
+<div class="container">
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </nav>
+
+      <div class="jumbotron">
+          <h1 class="display-4">Mongo Scrapper</h1>
+          <p class="lead">
+              <h2>
+                  <i>Scrape any ESPN headline!</i>
+                </h2>
+            <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" role="button" id="scrapeBtn" onclick="scrapeIt()">SCRAPE IT!</a>
+          </p>
+        </div>
+
+        <div class="row flamingo" id="articles">
+            </div>
+
+        <!-- <div class="flamingo" id="saved"></div> -->
+  
+ </div>
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
